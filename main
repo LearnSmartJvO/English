@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flashcards</h1>
+    <div id="flashcard" class="flashcard">Click to Flip</div>
+    <script>
+        const words = [
+            { word: "astronomy", definition: "The scientific study of the universe and objects in space." },
+            { word: "uncover", definition: "To discover something secret or hidden." },
+            { word: "debris", definition: "Broken or torn pieces of something larger." },
+            { word: "rarity", definition: "Something that is very unusual." },
+            { word: "hence", definition: "That is the reason for; therefore." },
+            { word: "solid", definition: "Hard or firm, not liquid or gas." },
+            { word: "core", definition: "The basic and most important part of something." },
+            { word: "eject", definition: "To push, throw, or force something out." },
+            { word: "spacesuit", definition: "A protective outfit for astronauts in space." },
+            { word: "planet", definition: "A large, round object in space moving around a star." },
+            { word: "rocket", definition: "A device that launches vehicles into space." },
+            { word: "space race", definition: "A competition to achieve space exploration milestones." },
+            { word: "space probe", definition: "An unmanned spacecraft sent to collect data." },
+            { word: "spaceship", definition: "A vehicle used for travel in space." },
+            { word: "spacecraft", definition: "A vehicle used for travel in space." },
+            { word: "spaceshuttle", definition: "A reusable spacecraft for travel to space." },
+            { word: "asteroid", definition: "A large rock orbiting the sun." },
+            { word: "space travel", definition: "Travel through outer space." },
+            { word: "space tourism", definition: "Traveling into space for leisure." },
+            { word: "satellite", definition: "A device in space that collects and transmits data." },
+            { word: "orbit", definition: "The curved path of an object in space." },
+            { word: "outer space", definition: "The vast region beyond Earth's atmosphere." },
+            { word: "alien", definition: "A creature from another planet." },
+            { word: "space station", definition: "A manned structure in orbit for research." },
+            { word: "confined", definition: "Small and completely enclosed." },
+            { word: "emission", definition: "An amount of gas, heat, or light that is released." },
+            { word: "contamination", definition: "The process of making something dirty or toxic." },
+            { word: "sparsely", definition: "With only a small number or amount of something." },
+            { word: "litter", definition: "Small pieces of trash left in public places." },
+            { word: "intriguing", definition: "Very interesting due to being unusual or mysterious." },
+            { word: "regrettably", definition: "In a way that expresses sorrow or regret." },
+            { word: "outskirts", definition: "The outer areas of a city or town." },
+            { word: "deforestation", definition: "The cutting down of trees on a large scale." },
+            { word: "overwhelming", definition: "Difficult to fight against; very intense." },
+            { word: "landfill", definition: "A place where waste is buried." },
+            { word: "advocate", definition: "To publicly support an idea or cause." },
+            { word: "wood pulp", definition: "Soft mass from wood used for making paper." },
+            { word: "bold", definition: "Not afraid of danger; confident and courageous." },
+            { word: "salvage", definition: "To save goods from damage or destruction." },
+            { word: "persuasive", definition: "Able to make someone believe or do something." },
+            { word: "bird of prey", definition: "A bird that hunts and eats other animals." },
+            { word: "food chain", definition: "A series of organisms each dependent on the next as a source of food." },
+            { word: "climate change", definition: "Changes in Earth's weather patterns." },
+            { word: "fossil fuel", definition: "Fuel from ancient organic matter." },
+            { word: "world renowned", definition: "Famous all over the world." },
+            { word: "natural habitat", definition: "The environment where an organism normally lives." },
+            { word: "mountain range", definition: "A series of connected mountains." },
+            { word: "diversity", definition: "A variety of different things or people." },
+            { word: "convincing", definition: "Able to persuade someone to believe something." },
+            { word: "compelling", definition: "Convincing or very strong in impact." },
+            { word: "current", definition: "A movement of water, air, or electricity." },
+            { word: "noticeable", definition: "Easy to see or be aware of." },
+            { word: "habitat", definition: "The natural home of an animal or plant." },
+            { word: "unsuitable", definition: "Not right or appropriate for a situation." },
+            { word: "proximity", definition: "The state of being near in space or time." },
+            { word: "stomping ground", definition: "A place where someone frequently spends time." },
+            { word: "accumulation", definition: "An amount of something collected over time." },
+            { word: "staggering", definition: "Extremely surprising or shocking." },
+            { word: "dense", definition: "Containing a lot of matter in a small space." },
+            { word: "indigestible", definition: "Difficult or impossible to digest." },
+            { word: "resilience", definition: "The ability to recover quickly from difficulties." },
+            { word: "elaborate", definition: "Detailed and complex in design or explanation." },
+            { word: "peripheral", definition: "Happening at the edges; less important." },
+            { word: "arbitrary", definition: "Based on random choice rather than reason." },
+            { word: "defy the odds", definition: "To succeed despite being unlikely to do so." },
+            { word: "crowning achievement", definition: "The most important success in someone's career." }
+        ];
+
+        let index = 0;
+        let flipped = false;
+        const flashcard = document.getElementById("flashcard");
+
+        function updateCard() {
+            flashcard.textContent = flipped ? words[index].definition : words[index].word;
+        }
+
+        flashcard.addEventListener("click", () => {
+            flipped = !flipped;
+            updateCard();
+        });
+
+        updateCard();
+    </script>
+</body>
+</html>
